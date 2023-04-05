@@ -4,6 +4,8 @@ import (
 	"flag"
 	"fmt"
 	"log"
+
+	"github.com/atotto/clipboard"
 )
 
 func main() {
@@ -21,5 +23,13 @@ func main() {
 	fmt.Printf("Length: %v, Numbers: %v, Symbols: %v \n", *length, *numbers, *symbols)
 
 	password := createPassword(*length, *numbers, *symbols)
-	fmt.Printf("Password Created: ", password)
+	fmt.Println("Password Created: ", password)
+
+	savePassword(password)
+	error := clipboard.WriteAll(password)
+	if error != nil {
+		log.Fatal(error)
+	} else {
+		fmt.Println("Password copied to clipboard")
+	}
 }
