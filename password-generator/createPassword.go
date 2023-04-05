@@ -18,3 +18,7 @@ func createPassword(length int, hasNumbers bool, hasSymbols bool) string {
 }
 
 //Todo create generate Password function
+
+func generatePassword(length int, chars string) string {
+	return "awesome"
+}
