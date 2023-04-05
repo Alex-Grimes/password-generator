@@ -8,4 +8,4 @@
 
 ## -s (use symbols in the password)
 
-./password-generator -l=12 -n=true -s=false
+./password-generator -length=12 -numbers=true -symbols=false
