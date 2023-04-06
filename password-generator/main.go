@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"log"
+	"net/http"
 
 	"github.com/atotto/clipboard"
 )
@@ -32,4 +33,8 @@ func main() {
 	} else {
 		fmt.Println("Password copied to clipboard")
 	}
+
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+
+	})
 }
